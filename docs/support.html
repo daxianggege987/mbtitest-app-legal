@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light" />
+<meta name="description" content="人格图鉴 PersonaAtlas 技术支持与常见问题 / Support and FAQ" />
+<title>技术支持 · 人格图鉴</title>
+<style>
+  :root{
+    --bg:#f5f6fb; --card:#ffffff; --text:#14161f; --body:#33384a; --muted:#6b7185;
+    --brand:#5157d1; --brand-2:#6e7af0; --brand-soft:#eef0ff; --line:#e6e8f2;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;-webkit-text-size-adjust:100%}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--body);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",Roboto,sans-serif;
+    line-height:1.72;font-size:16px;
+  }
+  a{color:var(--brand);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:20;
+    background:rgba(245,246,251,.86);
+    backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar{max-width:760px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:12px}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:700;color:var(--text);letter-spacing:-.01em}
+  .dot{
+    width:22px;height:22px;border-radius:7px;flex:none;
+    background:linear-gradient(135deg,var(--brand),var(--brand-2));
+    box-shadow:0 2px 8px rgba(81,87,209,.35);
+  }
+  .switch{margin-left:auto;display:flex;background:#e9ebf5;border-radius:999px;padding:3px;gap:2px}
+  .switch button{
+    border:0;background:transparent;cursor:pointer;font:inherit;font-size:.82rem;font-weight:600;
+    color:var(--muted);padding:5px 13px;border-radius:999px;transition:.18s;
+  }
+  .switch button[aria-pressed="true"]{background:#fff;color:var(--brand);box-shadow:0 1px 4px rgba(20,22,31,.12)}
+
+  /* ---------- layout ---------- */
+  main{max-width:760px;margin:0 auto;padding:28px 20px 64px}
+  .hero{margin-bottom:26px}
+  h1{font-size:1.72rem;line-height:1.3;margin:0 0 8px;color:var(--text);letter-spacing:-.02em;font-weight:750}
+  .meta{color:var(--muted);font-size:.9rem;margin:0 0 16px}
+  .tldr{
+    background:var(--brand-soft);border:1px solid #dfe2ff;border-radius:12px;
+    padding:14px 16px;font-size:.94rem;color:#3b4193;
+  }
+  .tldr strong{color:var(--brand)}
+
+  h2{
+    font-size:1.06rem;color:var(--text);font-weight:700;margin:34px 0 12px;
+    display:flex;align-items:center;gap:8px;letter-spacing:-.01em;
+  }
+  h2::before{content:"";width:3px;height:16px;border-radius:2px;background:var(--brand);flex:none}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px;box-shadow:0 1px 2px rgba(20,22,31,.04),0 6px 18px -12px rgba(20,22,31,.16);
+    margin-bottom:14px;
+  }
+  .card > :first-child{margin-top:0}
+  .card > :last-child{margin-bottom:0}
+  p{margin:0 0 12px}
+  ul{margin:0 0 12px;padding-inline-start:1.2rem}
+  li{margin:0 0 8px}
+  li:last-child{margin-bottom:0}
+  strong{color:var(--text);font-weight:650}
+  code{
+    background:#f0f1f8;border-radius:5px;padding:1px 5px;font-size:.88em;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#4a4f8f;
+  }
+
+  /* ---------- steps ---------- */
+  .steps{counter-reset:s;list-style:none;padding:0;margin:0}
+  .steps li{counter-increment:s;position:relative;padding-left:38px;margin-bottom:16px}
+  .steps li:last-child{margin-bottom:0}
+  .steps li::before{
+    content:counter(s);position:absolute;left:0;top:1px;
+    width:24px;height:24px;border-radius:50%;background:var(--brand-soft);color:var(--brand);
+    font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center;
+  }
+
+  /* ---------- faq ---------- */
+  details{border-bottom:1px solid var(--line);padding:2px 0}
+  details:first-of-type{border-top:1px solid var(--line)}
+  details:last-of-type{border-bottom:0}
+  summary{
+    cursor:pointer;padding:14px 26px 14px 0;position:relative;
+    font-weight:650;color:var(--text);list-style:none;font-size:.97rem;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{
+    content:"";position:absolute;right:4px;top:50%;width:7px;height:7px;
+    border-right:1.8px solid var(--muted);border-bottom:1.8px solid var(--muted);
+    transform:translateY(-65%) rotate(45deg);transition:.2s;
+  }
+  details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+  details[open] summary{color:var(--brand)}
+  .ans{padding:0 0 14px;font-size:.95rem;color:var(--body)}
+  .ans p:last-child{margin-bottom:0}
+
+  /* ---------- table ---------- */
+  .tbl{width:100%;border-collapse:collapse;font-size:.9rem;margin:4px 0 0}
+  .tbl th,.tbl td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  .tbl th{color:var(--muted);font-weight:600;font-size:.82rem;letter-spacing:.02em;text-transform:uppercase}
+  .tbl tr:last-child td{border-bottom:0}
+  .tbl td:first-child{white-space:nowrap;color:var(--text);font-weight:600}
+
+  footer{
+    max-width:760px;margin:0 auto;padding:24px 20px 56px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.86rem;
+  }
+  footer nav{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:10px}
+  footer nav a{font-weight:600}
+
+  .lang-panel{display:none}
+  .lang-panel.active{display:block}
+
+  @media (max-width:480px){
+    h1{font-size:1.42rem}
+    main{padding:22px 16px 48px}
+    .bar,footer{padding-left:16px;padding-right:16px}
+    .card{padding:17px}
+    .tbl{font-size:.84rem}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <span class="brand"><span class="dot" aria-hidden="true"></span><span>人格图鉴</span></span>
+    <div class="switch" role="group" aria-label="Language / 语言">
+      <button type="button" data-set-lang="zh" aria-pressed="true">中文</button>
+      <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= 中文 ================= -->
+  <div class="lang-panel" data-lang="zh" data-title="技术支持 · 人格图鉴">
+    <div class="hero">
+      <h1>技术支持</h1>
+      <p class="meta">人格图鉴 · 16 型人格测试 · 使用说明与常见问题</p>
+    </div>
+
+    <div class="card">
+      <p>本应用基于荣格心理类型理论，用 <strong>60 道标准题</strong>或 <strong>24 道快速题</strong>测出你的 16 型人格，并给出四个维度的偏向强度、类型画像与相处建议。</p>
+      <p>所有答题与结果<strong>只保存在本机</strong>：无需注册、无需登录，也没有服务器。</p>
+    </div>
+
+    <h2>快速上手</h2>
+    <div class="card">
+      <ol class="steps">
+        <li><strong>选择版本</strong>：首次推荐「标准版 60 题」（约 8 分钟），结果更稳定；时间紧就用「快速版 24 题」（约 3 分钟）。</li>
+        <li><strong>逐题作答</strong>：凭第一反应选择更接近的一项，不要在单题上纠结太久，也不要按“理想中的自己”作答。答题中途可退出，已完成部分不会保存。</li>
+        <li><strong>查看结果</strong>：提交后立即给出四字母类型、各维度百分比与完整解读。</li>
+        <li><strong>深入阅读</strong>：结果页可进入该类型的详情页，也可随时从首页进入「16 型图鉴」浏览全部类型。</li>
+        <li><strong>回看记录</strong>：每次结果自动存入「历史」，可对比两次测试的差异。</li>
+      </ol>
+    </div>
+
+    <h2>常见问题</h2>
+    <div class="card">
+      <details>
+        <summary>标准版和快速版有什么区别？该选哪个？</summary>
+        <div class="ans">
+          <p>两套题目独立命题、独立计分。标准版 60 题每个维度覆盖更充分，结果更稳定；快速版 24 题只取核心题目，速度快但边界类型的判定可能摆动。</p>
+          <p>建议：第一次做标准版；想快速看看倾向或重测验证一致性时用快速版。两次结果不同是正常的，看“偏向强度”比看四个字母更有意义。</p>
+        </div>
+      </details>
+      <details>
+        <summary>结果会不会不准？</summary>
+        <div class="ans">
+          <p>性格测评本质是自我报告的倾向测量，受当时的情绪、状态和答题心态影响，同一个人隔一段时间测出不同结果很常见。</p>
+          <p>把它当作<strong>自我观察的起点</strong>而不是结论：重点看哪些描述让你“被说中”，哪些不像你——不像的部分往往更值得想。</p>
+        </div>
+      </details>
+      <details>
+        <summary>换手机 / 删了 App，历史记录还在吗？</summary>
+        <div class="ans">
+          <p>不在。本应用不设账号、数据不上传，历史记录只存在本机。删除 App 或更换设备后记录即丢失，无法恢复。</p>
+          <p>建议在结果页截图保存，或先看完再换设备。</p>
+        </div>
+      </details>
+      <details>
+        <summary>为什么答题结束后会出现全屏广告？</summary>
+        <div class="ans">
+          <p>应用免费提供全部题目与解读，靠广告维持运营。插页广告只在<strong>每次测试完成、点击「查看结果」时</strong>出现一次，不会打断答题过程。</p>
+          <p>关闭或跳过广告后即进入结果页；若当时没有可用的广告（网络不稳或无填充），会直接进入结果页，不会被卡住。</p>
+        </div>
+      </details>
+      <details>
+        <summary>广告加载不出来 / 一直是空白？</summary>
+        <div class="ans">
+          <p>广告需要联网获取，网络不稳、开启了广告拦截或在部分地区时可能没有可用广告。这不影响任何功能，直接继续使用即可。</p>
+          <p>如果广告位长期空白并影响体验，请告诉我们你的地区和网络类型。</p>
+        </div>
+      </details>
+      <details>
+        <summary>结果页的「深度解读」解锁不了？</summary>
+        <div class="ans">
+          <p>该部分通过观看一段激励视频解锁。若视频加载失败，通常是网络问题——切换网络后重试即可。全部题目与基础解读不受影响，始终免费。</p>
+        </div>
+      </details>
+      <details>
+        <summary>可以离线使用吗？</summary>
+        <div class="ans">
+          <p>可以。答题、计分、类型解读、历史记录全部在本机完成，飞行模式下也能正常测试与查看结果；只有广告需要联网。</p>
+        </div>
+      </details>
+      <details>
+        <summary>支持哪些设备？</summary>
+        <div class="ans">
+          <table class="tbl">
+            <tr><th>设备</th><th>支持情况</th></tr>
+            <tr><td>iPhone</td><td>支持，iOS 16 及以上</td></tr>
+            <tr><td>iPad</td><td>支持，含横屏与分屏</td></tr>
+            <tr><td>Mac</td><td>Apple 芯片机型可直接运行（以 App Store 显示为准）</td></tr>
+            <tr><td>Apple Watch</td><td>不支持</td></tr>
+          </table>
+        </div>
+      </details>
+      <details>
+        <summary>语言可以切换吗？</summary>
+        <div class="ans">
+          <p>可以。应用内文案跟随系统语言：系统为简体中文时显示中文，其余语言显示英文。修改系统语言后重新打开应用即生效。</p>
+        </div>
+      </details>
+      <details>
+        <summary>第一次打开时问「是否允许跟踪」，要同意吗？</summary>
+        <div class="ans">
+          <p>由你决定，不影响任何功能。<strong>不允许</strong>时你仍会看到广告，但广告与你的关联度更低、重复度更高；允许后广告会相对贴合你的兴趣。</p>
+          <p>随时可在「设置 → 隐私与安全性 → 跟踪」里修改。</p>
+        </div>
+      </details>
+      <details>
+        <summary>会不会收集我的答题内容？</summary>
+        <div class="ans">
+          <p>不会。答题内容与结果只写在本机存储中，不上传、不关联任何身份信息。详见<a href="privacy.html">隐私政策</a>。</p>
+        </div>
+      </details>
+    </div>
+
+    <h2>遇到问题时</h2>
+    <div class="card">
+      <p>请先尝试以下步骤，多数问题可以由此解决：</p>
+      <ul>
+        <li>确认系统已更新到 iOS 16 或更高版本；</li>
+        <li>完全退出应用后重新打开；</li>
+        <li>网络异常时切换 Wi-Fi / 蜂窝网络；</li>
+        <li>仍无法解决时，卸载后重新安装（<strong>注意：历史记录会一并清空</strong>）。</li>
+      </ul>
+    </div>
+
+    <h2>联系我们</h2>
+    <div class="card">
+      <p>反馈问题时，请通过 App Store 产品页的<strong>「App 支持」</strong>入口联系我们，并尽量附上以下信息，能显著加快定位速度：</p>
+      <ul>
+        <li>设备型号（如 iPhone 15、iPad Air）与系统版本；</li>
+        <li>应用版本号（在 App Store 产品页的「版本历史记录」中可查）；</li>
+        <li>问题发生的具体步骤，以及截图（如涉及画面异常）。</li>
+      </ul>
+      <p>我们会在看到后尽快回复。功能建议同样欢迎。</p>
+    </div>
+
+    <h2>关于本应用</h2>
+    <div class="card">
+      <p>本测试基于荣格心理类型理论<strong>原创命题</strong>，与官方 MBTI® 测评无任何关联，亦未获其授权或认可。MBTI® 为其权利人的注册商标。</p>
+      <p>测评结果用于自我探索与娱乐参考，<strong>不构成心理诊断、医疗建议或职业决策依据</strong>。若你正经历持续的情绪困扰，请寻求专业心理帮助。</p>
+    </div>
+  </div>
+
+  <!-- ================= English ================= -->
+  <div class="lang-panel" data-lang="en" data-title="Support · PersonaAtlas">
+    <div class="hero">
+      <h1>Support</h1>
+      <p class="meta">PersonaAtlas · 16 Personality Test · Guide &amp; FAQ</p>
+    </div>
+
+    <div class="card">
+      <p>Based on Jungian type theory, the app places you among the 16 personality types using either the <strong>60-question standard test</strong> or the <strong>24-question quick test</strong>, then shows how strongly you lean on each of four dimensions, a full type profile, and notes on working with other types.</p>
+      <p>Everything you answer and every result <strong>stays on your device</strong>. No sign-up, no login, and no server.</p>
+    </div>
+
+    <h2>Getting started</h2>
+    <div class="card">
+      <ol class="steps">
+        <li><strong>Pick a length.</strong> Start with the standard 60-question test (about 8 minutes) for a steadier result; the 24-question quick test (about 3 minutes) is there when time is short.</li>
+        <li><strong>Answer question by question.</strong> Go with your first instinct and don't overthink any single item — and don't answer as the person you wish you were. If you leave mid-test, the unfinished part is not saved.</li>
+        <li><strong>See your result.</strong> You get your four-letter type, per-dimension percentages, and the full profile right away.</li>
+        <li><strong>Read deeper.</strong> Open the detail page for your type, or browse all 16 types any time from the Type Library on the home screen.</li>
+        <li><strong>Look back.</strong> Every result is saved to History so you can compare two runs.</li>
+      </ol>
+    </div>
+
+    <h2>Frequently asked</h2>
+    <div class="card">
+      <details>
+        <summary>What is the difference between the two lengths? Which should I take?</summary>
+        <div class="ans">
+          <p>They are separate question sets with separate scoring. The 60-question version covers each dimension more thoroughly and gives a steadier result; the 24-question version keeps only the core items, so borderline types can shift.</p>
+          <p>Take the standard test first. Use the quick test when you want a fast read or want to check consistency. Two different results are normal — the strength of your leaning matters more than the four letters.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Can the result be wrong?</summary>
+        <div class="ans">
+          <p>This is a self-report measure of preference, so mood, context, and how you approach the questions all affect it. Getting a different type at a different time is common.</p>
+          <p>Treat it as a <strong>starting point for self-observation</strong>, not a verdict. Notice which lines land and which don't — the ones that don't are often the more interesting material.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Will my history survive a new phone or reinstalling the app?</summary>
+        <div class="ans">
+          <p>No. There is no account and nothing is uploaded, so history lives only on this device. Deleting the app or switching devices removes it permanently.</p>
+          <p>Screenshot your result if you want to keep it.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Why does a full-screen ad appear after I finish?</summary>
+        <div class="ans">
+          <p>The app is free and ad-supported. An interstitial appears <strong>once per completed test, when you tap "See result"</strong> — it never interrupts the questions themselves.</p>
+          <p>Close or skip it and you go straight to your result. If no ad is available (weak network or no fill), you are taken to the result immediately and are never blocked.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Ads won't load, or the space stays blank</summary>
+        <div class="ans">
+          <p>Ads require a network connection. On unstable connections, with a content blocker, or in some regions there may be no ad to show. No feature depends on it — just keep going.</p>
+          <p>If the slot is blank for a long stretch, tell us your region and connection type.</p>
+        </div>
+      </details>
+      <details>
+        <summary>I can't unlock the extended reading</summary>
+        <div class="ans">
+          <p>That section unlocks by watching a rewarded video. If it fails to load, it is usually the connection — switch networks and retry. All questions and the core reading stay free regardless.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Does it work offline?</summary>
+        <div class="ans">
+          <p>Yes. Questions, scoring, type profiles, and history are all handled on-device and work in airplane mode. Only ads need a connection.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Which devices are supported?</summary>
+        <div class="ans">
+          <table class="tbl">
+            <tr><th>Device</th><th>Support</th></tr>
+            <tr><td>iPhone</td><td>Yes, iOS 16 or later</td></tr>
+            <tr><td>iPad</td><td>Yes, including landscape and Split View</td></tr>
+            <tr><td>Mac</td><td>Runs directly on Apple silicon Macs (see the App Store listing)</td></tr>
+            <tr><td>Apple Watch</td><td>Not supported</td></tr>
+          </table>
+        </div>
+      </details>
+      <details>
+        <summary>Can I change the language?</summary>
+        <div class="ans">
+          <p>The app follows your system language: Simplified Chinese system language shows Chinese, anything else shows English. Change the system language and reopen the app.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Should I allow tracking when asked on first launch?</summary>
+        <div class="ans">
+          <p>Your call — nothing in the app depends on it. If you decline you still see ads, but they will be less relevant and more repetitive. Allowing it makes ads more relevant to your interests.</p>
+          <p>You can change it any time in Settings → Privacy &amp; Security → Tracking.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Do you collect my answers?</summary>
+        <div class="ans">
+          <p>No. Your answers and results are written only to local storage. They are never uploaded or tied to your identity. See the <a href="privacy.html">Privacy Policy</a> for details.</p>
+        </div>
+      </details>
+    </div>
+
+    <h2>If something goes wrong</h2>
+    <div class="card">
+      <p>Try these first — they resolve most issues:</p>
+      <ul>
+        <li>Make sure the device is on iOS 16 or later;</li>
+        <li>Force-quit the app and reopen it;</li>
+        <li>Switch between Wi-Fi and cellular if the connection is flaky;</li>
+        <li>Reinstall as a last resort (<strong>note: this clears your history</strong>).</li>
+      </ul>
+    </div>
+
+    <h2>Contact us</h2>
+    <div class="card">
+      <p>Reach us through the <strong>App Support</strong> link on the app's App Store page. Including the following makes a fix much faster:</p>
+      <ul>
+        <li>Device model (e.g. iPhone 15, iPad Air) and OS version;</li>
+        <li>App version (see Version History on the App Store page);</li>
+        <li>The exact steps that trigger the problem, plus a screenshot if it is visual.</li>
+      </ul>
+      <p>We read everything and reply as soon as we can. Feature requests are welcome too.</p>
+    </div>
+
+    <h2>About this app</h2>
+    <div class="card">
+      <p>The question set is <strong>original work</strong> built on Jungian type theory. It is not affiliated with, endorsed by, or licensed from the official MBTI® assessment. MBTI® is a registered trademark of its owner.</p>
+      <p>Results are for self-reflection and entertainment only and <strong>are not a diagnosis, medical advice, or a basis for career decisions</strong>. If you are dealing with ongoing distress, please seek professional help.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <nav>
+    <a href="support.html">技术支持 / Support</a>
+    <a href="privacy.html">隐私政策 / Privacy</a>
+  </nav>
+  <div>© 2026 人格图鉴 PersonaAtlas · <span data-updated>2026-11-05</span></div>
+</footer>
+
+<script>
+(function(){
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.lang-panel'));
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-set-lang]'));
+  var KEY = 'personaatlas-lang';
+
+  function normalize(v){
+    if(!v) return null;
+    v = String(v).toLowerCase();
+    if(v.indexOf('zh') === 0) return 'zh';
+    if(v.indexOf('en') === 0) return 'en';
+    return null;
+  }
+
+  function apply(lang){
+    var panel = null;
+    panels.forEach(function(p){
+      var on = p.dataset.lang === lang;
+      p.classList.toggle('active', on);
+      if(on) panel = p;
+    });
+    buttons.forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.dataset.setLang === lang));
+    });
+    document.documentElement.lang = (lang === 'zh') ? 'zh-Hans' : 'en';
+    if(panel && panel.dataset.title) document.title = panel.dataset.title;
+  }
+
+  var fromUrl = normalize(new URLSearchParams(location.search).get('lang'));
+  var saved = null;
+  try { saved = normalize(localStorage.getItem(KEY)); } catch(e) {}
+  var initial = fromUrl || saved || normalize(navigator.language) || 'zh';
+  apply(initial);
+
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){
+      var lang = b.dataset.setLang;
+      apply(lang);
+      try { localStorage.setItem(KEY, lang); } catch(e) {}
+      var url = new URL(location.href);
+      url.searchParams.set('lang', lang);
+      history.replaceState(null, '', url);
+    });
+  });
+})();
+</script>
+</body>
+</html>

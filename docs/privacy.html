@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light" />
+<meta name="description" content="人格图鉴 PersonaAtlas 隐私政策 / Privacy Policy" />
+<title>隐私政策 · 人格图鉴</title>
+<style>
+  :root{
+    --bg:#f5f6fb; --card:#ffffff; --text:#14161f; --body:#33384a; --muted:#6b7185;
+    --brand:#5157d1; --brand-2:#6e7af0; --brand-soft:#eef0ff; --line:#e6e8f2;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;-webkit-text-size-adjust:100%}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--body);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",Roboto,sans-serif;
+    line-height:1.72;font-size:16px;
+  }
+  a{color:var(--brand);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  header{
+    position:sticky;top:0;z-index:20;
+    background:rgba(245,246,251,.86);
+    backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar{max-width:760px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:12px}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:700;color:var(--text);letter-spacing:-.01em}
+  .dot{
+    width:22px;height:22px;border-radius:7px;flex:none;
+    background:linear-gradient(135deg,var(--brand),var(--brand-2));
+    box-shadow:0 2px 8px rgba(81,87,209,.35);
+  }
+  .switch{margin-left:auto;display:flex;background:#e9ebf5;border-radius:999px;padding:3px;gap:2px}
+  .switch button{
+    border:0;background:transparent;cursor:pointer;font:inherit;font-size:.82rem;font-weight:600;
+    color:var(--muted);padding:5px 13px;border-radius:999px;transition:.18s;
+  }
+  .switch button[aria-pressed="true"]{background:#fff;color:var(--brand);box-shadow:0 1px 4px rgba(20,22,31,.12)}
+
+  main{max-width:760px;margin:0 auto;padding:28px 20px 64px}
+  .hero{margin-bottom:24px}
+  h1{font-size:1.72rem;line-height:1.3;margin:0 0 8px;color:var(--text);letter-spacing:-.02em;font-weight:750}
+  .meta{color:var(--muted);font-size:.9rem;margin:0 0 16px}
+  .tldr{
+    background:var(--brand-soft);border:1px solid #dfe2ff;border-radius:12px;
+    padding:14px 16px;font-size:.94rem;color:#3b4193;
+  }
+  .tldr strong{color:var(--brand)}
+  .tldr ul{margin:8px 0 0;padding-inline-start:1.15rem}
+  .tldr li{margin:0 0 4px}
+
+  h2{
+    font-size:1.06rem;color:var(--text);font-weight:700;margin:34px 0 12px;
+    display:flex;align-items:center;gap:8px;letter-spacing:-.01em;
+  }
+  h2::before{content:"";width:3px;height:16px;border-radius:2px;background:var(--brand);flex:none}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px;box-shadow:0 1px 2px rgba(20,22,31,.04),0 6px 18px -12px rgba(20,22,31,.16);
+    margin-bottom:14px;
+  }
+  .card > :first-child{margin-top:0}
+  .card > :last-child{margin-bottom:0}
+  p{margin:0 0 12px}
+  ul{margin:0 0 12px;padding-inline-start:1.2rem}
+  li{margin:0 0 8px}
+  li:last-child{margin-bottom:0}
+  strong{color:var(--text);font-weight:650}
+
+  .tbl{width:100%;border-collapse:collapse;font-size:.9rem;margin:4px 0 0}
+  .tbl th,.tbl td{text-align:left;padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+  .tbl th{color:var(--muted);font-weight:600;font-size:.8rem;letter-spacing:.02em;text-transform:uppercase}
+  .tbl tr:last-child td{border-bottom:0}
+  .tbl td:first-child{color:var(--text);font-weight:600;min-width:110px}
+
+  .note{
+    border-inline-start:3px solid var(--brand);background:#f7f8ff;
+    padding:12px 14px;border-radius:0 10px 10px 0;font-size:.93rem;color:#3b4193;margin:14px 0 0;
+  }
+
+  footer{
+    max-width:760px;margin:0 auto;padding:24px 20px 56px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.86rem;
+  }
+  footer nav{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:10px}
+  footer nav a{font-weight:600}
+
+  .lang-panel{display:none}
+  .lang-panel.active{display:block}
+
+  @media (max-width:480px){
+    h1{font-size:1.42rem}
+    main{padding:22px 16px 48px}
+    .bar,footer{padding-left:16px;padding-right:16px}
+    .card{padding:17px}
+    .tbl{font-size:.84rem}
+    .tbl td:first-child{min-width:86px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <span class="brand"><span class="dot" aria-hidden="true"></span><span>人格图鉴</span></span>
+    <div class="switch" role="group" aria-label="Language / 语言">
+      <button type="button" data-set-lang="zh" aria-pressed="true">中文</button>
+      <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= 中文 ================= -->
+  <div class="lang-panel" data-lang="zh" data-title="隐私政策 · 人格图鉴">
+    <div class="hero">
+      <h1>隐私政策</h1>
+      <p class="meta">人格图鉴 · 16 型人格测试　生效日期：2026 年 11 月 5 日</p>
+      <div class="tldr">
+        <strong>一句话概括：</strong>我们不做账号、没有服务器，你的答题与结果只存在你自己的设备上；唯一会对外联网的是第三方广告服务，默认只获取广告展示所必需的信息。
+        <ul>
+          <li>不收集姓名、手机号、邮箱等身份信息</li>
+          <li>不读取通讯录、相册、精确位置、健康数据</li>
+          <li>不出售、不转让任何用户数据</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>1. 适用范围</h2>
+    <div class="card">
+      <p>本政策适用于「人格图鉴」（英文名 PersonaAtlas，以下称“本应用”）在 iPhone、iPad 与 Mac 上的全部版本。</p>
+      <p>本应用为性格自测工具，题目与解读均为原创内容，与官方 MBTI® 测评无关联，亦未获其授权或认可。</p>
+    </div>
+
+    <h2>2. 我们收集的信息</h2>
+    <div class="card">
+      <p><strong>我们不收集可直接识别你身份的信息。</strong>具体如下：</p>
+      <table class="tbl">
+        <tr><th>信息类型</th><th>是否收集</th><th>说明</th></tr>
+        <tr><td>姓名、手机号、邮箱</td><td>不收集</td><td>无需注册或登录，应用内没有输入身份信息的入口</td></tr>
+        <tr><td>账号与密码</td><td>不收集</td><td>不存在账号体系</td></tr>
+        <tr><td>通讯录、相册、麦克风、摄像头</td><td>不访问</td><td>应用未申请任何此类系统权限</td></tr>
+        <tr><td>精确位置</td><td>不收集</td><td>应用不调用定位服务</td></tr>
+        <tr><td>健康与健身数据</td><td>不访问</td><td>未接入 HealthKit</td></tr>
+        <tr><td>答题内容与结果</td><td>仅存本机</td><td>不上传、不关联身份，详见第 3 节</td></tr>
+        <tr><td>广告相关标识与数据</td><td>由广告服务收集</td><td>详见第 4 节</td></tr>
+      </table>
+    </div>
+
+    <h2>3. 保存在你设备上的数据</h2>
+    <div class="card">
+      <p>以下数据仅通过 iOS 系统的本地存储机制保存在你的设备上，<strong>不会离开设备</strong>，我们无法访问：</p>
+      <ul>
+        <li><strong>测试结果</strong>：类型代码、四个维度的百分比、完成时间；</li>
+        <li><strong>历史记录</strong>：你保留的历次结果，用于对比；</li>
+        <li><strong>偏好设置</strong>：界面语言等本地配置。</li>
+      </ul>
+      <p>这些数据由 iOS 沙盒隔离，其他应用无法读取。删除本应用即同时删除上述全部数据，且不可恢复。</p>
+      <div class="note">本应用不使用 iCloud 同步、不做备份上传，因此换设备或重装后历史记录不会跟随迁移。</div>
+    </div>
+
+    <h2>4. 第三方广告服务</h2>
+    <div class="card">
+      <p>本应用免费提供全部题目与解读，通过展示广告维持运营。广告由 <strong>Google AdMob</strong>（Google LLC）提供，形式包括横幅广告、插页广告、激励视频广告与原生广告。</p>
+      <p>为完成广告投放与反作弊，Google 及其广告合作方可能收集并处理以下信息：</p>
+      <ul>
+        <li>设备标识符，包括广告标识符（IDFA，仅在系统授权后可用）与应用实例标识；</li>
+        <li>设备信息：型号、操作系统版本、语言、屏幕尺寸、大致地区（由 IP 地址推断，非精确位置）；</li>
+        <li>广告交互数据：展示、点击、观看完成情况；</li>
+        <li>诊断与性能数据：用于排查投放故障。</li>
+      </ul>
+      <p>这些信息用于：选择并展示广告、限制同一广告的重复展示、统计广告效果、防止欺诈与无效流量。我们<strong>不会获得</strong>你的姓名或其他身份信息，也无法通过这些数据直接识别你个人。</p>
+      <p>相关说明与选择权：</p>
+      <ul>
+        <li>Google 隐私政策：<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+        <li>Google 如何使用合作方网站或应用中的数据：<a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">policies.google.com/technologies/partner-sites</a></li>
+        <li>广告个性化设置：<a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a></li>
+      </ul>
+      <p>你可以在 iOS「设置 → 隐私与安全性 → 跟踪」中随时关闭允许 App 请求跟踪，关闭后你仍会看到广告，但广告与你的关联度会降低。</p>
+    </div>
+
+    <h2>5. 数据统计</h2>
+    <div class="card">
+      <p>当前版本<strong>未接入任何第三方统计分析服务</strong>，也不含用户行为追踪 SDK。应用内的页面访问记录仅在开发调试版本中输出到本机控制台，不会发送到任何服务器，也不会随正式版本上传。</p>
+      <p>若未来引入统计服务，我们会在本政策中明确列出服务名称、采集字段与用途，并同步更新 App Store 的隐私标签后再发布。</p>
+    </div>
+
+    <h2>6. 数据共享与出售</h2>
+    <div class="card">
+      <p>我们<strong>不出售、不出租、不交换</strong>任何用户数据。除以下情形外，不会向第三方提供数据：</p>
+      <ul>
+        <li><strong>广告服务</strong>：如第 4 节所述，由 Google AdMob 按其政策处理广告投放所需数据；</li>
+        <li><strong>法律要求</strong>：在收到合法有效的司法或行政要求时，依法提供我们实际持有的信息（鉴于我们不存储用户数据，通常无可提供内容）。</li>
+      </ul>
+    </div>
+
+    <h2>7. 数据保留与删除</h2>
+    <div class="card">
+      <p>由于我们不运营服务器，也不存储你的答题数据，<strong>删除数据的方式就是删除应用</strong>：</p>
+      <ul>
+        <li>卸载应用即清除本机保存的全部结果与设置，即刻生效、不可恢复；</li>
+        <li>如仅想清除历史记录，可在应用内的历史记录页面逐条删除。</li>
+      </ul>
+      <p>广告服务方按其自身政策保留数据，你可通过第 4 节的链接了解并行使相关权利。</p>
+    </div>
+
+    <h2>8. 数据安全</h2>
+    <div class="card">
+      <p>本地数据受 iOS 沙盒与应用级加密保护。广告请求通过 HTTPS 传输。</p>
+      <p>由于不存在服务器端存储，本应用不存在“用户数据库泄露”这类风险；但请注意：设备丢失或未设密码时，本地记录可能被他人查看。</p>
+    </div>
+
+    <h2>9. 儿童隐私</h2>
+    <div class="card">
+      <p>本应用<strong>不面向 13 岁以下儿童</strong>，也不会主动收集儿童的个人信息。应用不含社交功能、不含用户生成内容、不含应用内购买。</p>
+      <p>若你是家长或监护人，发现孩子在未经同意的情况下使用本应用，可自行删除应用以清除全部本地数据；如有疑问可通过下方方式联系我们。</p>
+    </div>
+
+    <h2>10. 你的权利</h2>
+    <div class="card">
+      <p>依据《中华人民共和国个人信息保护法》、欧盟《通用数据保护条例》（GDPR）、《加州消费者隐私法案》（CCPA）等适用法律，你享有知情、访问、更正、删除、撤回同意等权利。</p>
+      <p>由于本应用不收集可识别身份的个人信息、不建立用户档案，上述权利在技术上多通过“删除应用”直接实现。若你仍希望行使权利或提出疑问，可通过第 12 节的方式联系我们，我们会在合理期限内答复。</p>
+      <p>我们不基于你的答题结果作出任何自动化决策，也不会据此向你推送定制内容或差别定价。</p>
+    </div>
+
+    <h2>11. 政策变更</h2>
+    <div class="card">
+      <p>若本政策发生实质性变更（例如新增数据采集类型或第三方服务），我们会在本页面更新并修改文首的生效日期，必要时在应用内提示。</p>
+      <p>继续使用本应用即视为接受更新后的政策。建议你在版本更新后回访本页面。</p>
+    </div>
+
+    <h2>12. 联系我们</h2>
+    <div class="card">
+      <p>对本政策有任何疑问、异议或请求，请通过 App Store 产品页的<strong>「App 支持」</strong>入口联系我们，我们会在收到后尽快回复。</p>
+      <p>更多使用问题请见<a href="support.html">技术支持</a>页面。</p>
+    </div>
+  </div>
+
+  <!-- ================= English ================= -->
+  <div class="lang-panel" data-lang="en" data-title="Privacy Policy · PersonaAtlas">
+    <div class="hero">
+      <h1>Privacy Policy</h1>
+      <p class="meta">PersonaAtlas · 16 Personality Test　Effective: November 5, 2026</p>
+      <div class="tldr">
+        <strong>In one sentence:</strong> there is no account and no server — your answers and results stay on your own device. The only outbound connections come from third-party advertising, which receives only what is needed to serve an ad.
+        <ul>
+          <li>We do not collect names, phone numbers, or email addresses</li>
+          <li>We do not access contacts, photos, precise location, or health data</li>
+          <li>We never sell or transfer user data</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>1. Scope</h2>
+    <div class="card">
+      <p>This policy applies to all versions of PersonaAtlas (人格图鉴, "the app") on iPhone, iPad, and Mac.</p>
+      <p>The app is a self-assessment tool. All questions and readings are original content; the app is not affiliated with, endorsed by, or licensed from the official MBTI® assessment.</p>
+    </div>
+
+    <h2>2. What we collect</h2>
+    <div class="card">
+      <p><strong>We do not collect information that identifies you personally.</strong> Specifically:</p>
+      <table class="tbl">
+        <tr><th>Data</th><th>Collected</th><th>Notes</th></tr>
+        <tr><td>Name, phone, email</td><td>No</td><td>No sign-up or login; the app has no field for identity data</td></tr>
+        <tr><td>Account credentials</td><td>No</td><td>There is no account system</td></tr>
+        <tr><td>Contacts, photos, mic, camera</td><td>Never accessed</td><td>The app requests no such system permissions</td></tr>
+        <tr><td>Precise location</td><td>No</td><td>Location services are never used</td></tr>
+        <tr><td>Health &amp; fitness data</td><td>Never accessed</td><td>HealthKit is not integrated</td></tr>
+        <tr><td>Answers and results</td><td>On-device only</td><td>Never uploaded, never linked to identity — see §3</td></tr>
+        <tr><td>Ad identifiers and ad data</td><td>By the ad service</td><td>See §4</td></tr>
+      </table>
+    </div>
+
+    <h2>3. Data stored on your device</h2>
+    <div class="card">
+      <p>The following is stored locally through iOS storage mechanisms. It <strong>never leaves your device</strong> and is inaccessible to us:</p>
+      <ul>
+        <li><strong>Test results</strong>: type code, per-dimension percentages, completion time;</li>
+        <li><strong>History</strong>: the results you keep, for comparison;</li>
+        <li><strong>Preferences</strong>: local settings such as interface language.</li>
+      </ul>
+      <p>This data is isolated by the iOS app sandbox; other apps cannot read it. Deleting the app deletes all of it, permanently.</p>
+      <div class="note">The app does not use iCloud sync or upload backups, so history does not carry over to a new device or a reinstall.</div>
+    </div>
+
+    <h2>4. Third-party advertising</h2>
+    <div class="card">
+      <p>The app is free and ad-supported. Ads are served by <strong>Google AdMob</strong> (Google LLC) as banner, interstitial, rewarded video, and native ads.</p>
+      <p>To deliver ads and prevent fraud, Google and its ad partners may collect and process:</p>
+      <ul>
+        <li>Device identifiers, including the advertising identifier (IDFA, only where authorised by the system) and app instance identifiers;</li>
+        <li>Device information: model, OS version, language, screen size, approximate region inferred from IP address (not precise location);</li>
+        <li>Ad interaction data: impressions, clicks, video completion;</li>
+        <li>Diagnostic and performance data used to troubleshoot delivery.</li>
+      </ul>
+      <p>This is used to select and serve ads, cap repetition, measure performance, and prevent invalid traffic. We <strong>never receive</strong> your name or other identity data, and it cannot be used by us to identify you.</p>
+      <p>Further information and your choices:</p>
+      <ul>
+        <li>Google Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+        <li>How Google uses data from partner sites or apps: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">policies.google.com/technologies/partner-sites</a></li>
+        <li>Ad personalisation settings: <a href="https://adssettings.google.com" target="_blank" rel="noopener">adssettings.google.com</a></li>
+      </ul>
+      <p>You can turn off "Allow Apps to Request to Track" at any time in iOS Settings → Privacy &amp; Security → Tracking. You will still see ads, but they will be less relevant to you.</p>
+    </div>
+
+    <h2>5. Analytics</h2>
+    <div class="card">
+      <p>The current version <strong>does not integrate any third-party analytics service</strong> and contains no behavioural tracking SDK. In-app screen events are printed only to the local console in debug builds; they are never sent to a server and are not included in release builds.</p>
+      <p>If analytics is introduced later, we will name the service, the fields collected, and the purpose in this policy, and update the App Store privacy label before release.</p>
+    </div>
+
+    <h2>6. Sharing and sale of data</h2>
+    <div class="card">
+      <p>We <strong>do not sell, rent, or trade</strong> user data. We disclose data only in these cases:</p>
+      <ul>
+        <li><strong>Advertising</strong>: as described in §4, Google AdMob processes what is needed to serve ads under its own policies;</li>
+        <li><strong>Legal obligation</strong>: where required by valid legal process, we provide what we actually hold (given we store no user data, there is normally nothing to provide).</li>
+      </ul>
+    </div>
+
+    <h2>7. Retention and deletion</h2>
+    <div class="card">
+      <p>Because we operate no servers and store none of your answers, <strong>deleting the app is how you delete the data</strong>:</p>
+      <ul>
+        <li>Uninstalling clears all local results and settings immediately and irreversibly;</li>
+        <li>To clear only your history, delete entries individually in the History screen.</li>
+      </ul>
+      <p>Ad partners retain data under their own policies; use the links in §4 to review and exercise your choices there.</p>
+    </div>
+
+    <h2>8. Security</h2>
+    <div class="card">
+      <p>Local data is protected by the iOS sandbox and on-device encryption. Ad requests are transmitted over HTTPS.</p>
+      <p>With no server-side storage, there is no "user database breach" risk. Note, however, that a lost device without a passcode may expose local records to whoever holds it.</p>
+    </div>
+
+    <h2>9. Children's privacy</h2>
+    <div class="card">
+      <p>The app is <strong>not directed to children under 13</strong> and does not knowingly collect their personal information. It has no social features, no user-generated content, and no in-app purchases.</p>
+      <p>If you are a parent or guardian and believe a child has used the app, you can delete the app to erase all local data. Contact us via the link below with any concerns.</p>
+    </div>
+
+    <h2>10. Your rights</h2>
+    <div class="card">
+      <p>Depending on where you live, you may have rights under laws such as the GDPR, the CCPA/CPRA, and China's Personal Information Protection Law — including rights to know, access, correct, delete, and withdraw consent.</p>
+      <p>Because the app collects no identifiable personal information and builds no user profiles, these rights are in practice exercised by deleting the app. You may still contact us with any request or question using §12, and we will respond within a reasonable period.</p>
+      <p>We make no automated decisions about you based on your results, and we do not use them for targeted content or differential pricing.</p>
+    </div>
+
+    <h2>11. Changes to this policy</h2>
+    <div class="card">
+      <p>If this policy changes materially — for example, a new category of data or a new third-party service — we will update this page and revise the effective date above, and where appropriate notify you in the app.</p>
+      <p>Continued use of the app constitutes acceptance of the updated policy. We recommend revisiting this page after app updates.</p>
+    </div>
+
+    <h2>12. Contact</h2>
+    <div class="card">
+      <p>For any question, objection, or request regarding this policy, reach us through the <strong>App Support</strong> link on the app's App Store page. We reply as soon as we can.</p>
+      <p>For usage questions, see <a href="support.html">Support</a>.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <nav>
+    <a href="support.html">技术支持 / Support</a>
+    <a href="privacy.html">隐私政策 / Privacy</a>
+  </nav>
+  <div>© 2026 人格图鉴 PersonaAtlas · <span data-updated>2026-11-05</span></div>
+</footer>
+
+<script>
+(function(){
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.lang-panel'));
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-set-lang]'));
+  var KEY = 'personaatlas-lang';
+
+  function normalize(v){
+    if(!v) return null;
+    v = String(v).toLowerCase();
+    if(v.indexOf('zh') === 0) return 'zh';
+    if(v.indexOf('en') === 0) return 'en';
+    return null;
+  }
+
+  function apply(lang){
+    var panel = null;
+    panels.forEach(function(p){
+      var on = p.dataset.lang === lang;
+      p.classList.toggle('active', on);
+      if(on) panel = p;
+    });
+    buttons.forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.dataset.setLang === lang));
+    });
+    document.documentElement.lang = (lang === 'zh') ? 'zh-Hans' : 'en';
+    if(panel && panel.dataset.title) document.title = panel.dataset.title;
+  }
+
+  var fromUrl = normalize(new URLSearchParams(location.search).get('lang'));
+  var saved = null;
+  try { saved = normalize(localStorage.getItem(KEY)); } catch(e) {}
+  var initial = fromUrl || saved || normalize(navigator.language) || 'zh';
+  apply(initial);
+
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){
+      var lang = b.dataset.setLang;
+      apply(lang);
+      try { localStorage.setItem(KEY, lang); } catch(e) {}
+      var url = new URL(location.href);
+      url.searchParams.set('lang', lang);
+      history.replaceState(null, '', url);
+    });
+  });
+})();
+</script>
+</body>
+</html>

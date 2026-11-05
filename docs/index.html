@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light" />
+<title>人格图鉴 PersonaAtlas · 法律与支持信息</title>
+<style>
+  :root{
+    --bg:#f5f6fb;--card:#fff;--text:#14161f;--body:#33384a;--muted:#6b7185;
+    --brand:#5157d1;--brand-2:#6e7af0;--line:#e6e8f2;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;min-height:100vh;background:var(--bg);color:var(--body);
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",Roboto,sans-serif;
+    line-height:1.7;display:flex;align-items:center;justify-content:center;padding:32px 20px;
+  }
+  .wrap{width:100%;max-width:560px}
+  .head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+  .dot{width:44px;height:44px;border-radius:13px;flex:none;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:0 6px 18px -6px rgba(81,87,209,.6)}
+  h1{font-size:1.3rem;margin:0;color:var(--text);letter-spacing:-.02em;font-weight:750}
+  .sub{color:var(--muted);font-size:.86rem;margin:0 0 26px;padding-left:56px}
+  a.card{
+    display:flex;align-items:center;gap:14px;text-decoration:none;
+    background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-bottom:12px;
+    color:var(--text);box-shadow:0 1px 2px rgba(20,22,31,.04),0 8px 20px -16px rgba(20,22,31,.3);
+    transition:transform .16s,border-color .16s;
+  }
+  a.card:hover{transform:translateY(-2px);border-color:#cfd3f5}
+  .ico{width:38px;height:38px;border-radius:11px;background:#eef0ff;display:flex;align-items:center;justify-content:center;flex:none;font-size:1.1rem}
+  .txt{flex:1;min-width:0}
+  .txt b{display:block;font-size:.98rem;font-weight:700;letter-spacing:-.01em}
+  .txt span{display:block;font-size:.82rem;color:var(--muted);margin-top:2px}
+  .arrow{color:#b9bdd4;font-size:1.1rem;flex:none}
+  footer{margin-top:24px;font-size:.8rem;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head"><span class="dot" aria-hidden="true"></span><h1>人格图鉴 · PersonaAtlas</h1></div>
+  <p class="sub">16 型人格测试 · 法律与支持信息 / Legal &amp; Support</p>
+
+  <a class="card" href="support.html">
+    <span class="ico" aria-hidden="true">🛟</span>
+    <span class="txt"><b>技术支持 / Support</b><span>使用说明、常见问题与联系方式 · Guide, FAQ, contact</span></span>
+    <span class="arrow" aria-hidden="true">›</span>
+  </a>
+
+  <a class="card" href="privacy.html">
+    <span class="ico" aria-hidden="true">🔒</span>
+    <span class="txt"><b>隐私政策 / Privacy Policy</b><span>数据如何处理、第三方广告说明 · Data handling &amp; ads</span></span>
+    <span class="arrow" aria-hidden="true">›</span>
+  </a>
+
+  <footer>© 2026 人格图鉴 PersonaAtlas</footer>
+</div>
+<script>
+(function(){
+  var zh = !!/^zh/i.test(navigator.language || '');
+  if(!zh) document.documentElement.lang = 'en';
+})();
+</script>
+</body>
+</html>
